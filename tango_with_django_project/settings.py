@@ -21,6 +21,13 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # Point to my new static directory
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
+# Media files will be uploaded to the Django project’s root
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+# These variables are picked up and used by Django to set up media file hosting
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -68,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
