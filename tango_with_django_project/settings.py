@@ -18,6 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Reference the templates directory
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
+# Point to my new static directory
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -120,5 +122,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+# List of paths with which Django can expect to find static files
+# that can be served
+STATICFILES_DIRS = [STATIC_DIR, ]
 
 STATIC_URL = '/static/'
