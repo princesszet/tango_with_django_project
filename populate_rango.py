@@ -79,12 +79,6 @@ def add_cat(name, views, likes):
     c.save()
     return c
 
-# old add_cat:
-# def add_cat(name):
-#    c = Category.objects.get_or_create(name=name)[0]
-#    c.save()
-#    return c
-
 # Start execution here!
 if __name__ == '__main__':
     print("Starting Rango population script...")
