@@ -49,7 +49,7 @@ def show_category(request, category_name_slug):
 def about(request):
     # return HttpResponse("Rango says here is the about page"
     # "</br> <a href='/rango/'>Index</a>")
-    context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
+    context_dict = {'boldmessage': "Rango says here is the about page!"}
     return render(request, 'rango/about.html', context=context_dict)
 
 def add_category(request):
@@ -80,7 +80,7 @@ def add_page(request, category_name_slug):
                 page.category = category
                 page.views = 0
                 page.save()
-                return show_category(request, category_name_slug)
+            return show_category(request, category_name_slug)
 
         else:
             print(form.errors)
