@@ -47,8 +47,10 @@ def show_category(request, category_name_slug):
     return render(request, 'rango/category.html', context_dict)
 
 def about(request):
-    # return HttpResponse("Rango says here is the about page"
-    # "</br> <a href='/rango/'>Index</a>")
+    # prints out whether the method is a GET or a POST
+    print(request.method)
+    # prints out the user name, if no one is logged in it prints `AnonymousUser`
+    print(request.user)
     context_dict = {'boldmessage': "Rango says here is the about page!"}
     return render(request, 'rango/about.html', context=context_dict)
 
