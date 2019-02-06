@@ -7,8 +7,13 @@
 
   {% block body_block %}
 
-        <h1>Rango says...</h1>
-        <div>hey there partner!</div>
+        <h1>Rango says...
+        {% if user.is_authenticated %}
+            howdy {{ user.username }}!
+        {% else %}
+            hey there partner!
+        {% endif %}hey there partner!
+        </h1>
 
         <h2>Most Liked Categories</h2>
         <div>
@@ -17,7 +22,11 @@
             {% for category in categories %}
                 <li>
                   <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
-                </li>
+                </li{% if user.is_authenticated %}
+howdy {{ user.username }}!
+{% else %}
+hey there partner!
+{% endif %}
             {% endfor %}
         </ul>
         {% else %}
