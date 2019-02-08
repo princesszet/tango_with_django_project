@@ -62,6 +62,8 @@ ALLOWED_HOSTS = []
 # redirect users that aren’t logged in to the login page
 LOGIN_URL = '/rango/login/'
 
+SESSION_COOKIE_AGE = 1209600
+
 
 # Application definition
 
